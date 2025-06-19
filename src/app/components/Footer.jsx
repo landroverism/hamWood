@@ -50,7 +50,7 @@ function Footer() {
       Email Us
     </a>
   </div>
-  <h4 className='mt-5 font-semibold text-teal-950'>Located at Gikomba, Nairobi</h4>
+  <h4 className='mt-5 font-semibold text-teal-950'>Located at Syokimau, Nairobi</h4>
   </div></div>
   )
 }
