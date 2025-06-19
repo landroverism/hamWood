@@ -8,14 +8,17 @@ function Main() {
   const [category, setCategory] = useState(""); // Default category
   const router = useRouter();
 
-  // Get the current category from the URL (safe for SSR)
+  // Get the current category from the URL (client-side only)
   useEffect(() => {
-    const searchParams = new URLSearchParams(window.location.search);
-    const categoryParam = searchParams.get("category");
-    if (categoryParam) {
-      setCategory(categoryParam);
+    // Only run on client side
+    if (typeof window !== 'undefined') {
+      const searchParams = new URLSearchParams(window.location.search);
+      const categoryParam = searchParams.get("category");
+      if (categoryParam) {
+        setCategory(categoryParam);
+      }
     }
-  }, [location]); // Re-run when the location (search params) change
+  }, []); // Run once on component mount
 
   // Function to handle navigation
   const handleNavigation = (category) => {

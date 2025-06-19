@@ -1,23 +1,31 @@
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { readyMade1 } from '../helpers/helpers';
 import { readyMade2 } from '../helpers/helpers';
 import Image from 'next/image';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import Modal from './Modal';
 import { UploadedReady } from '../helpers/fetched';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 
-function Ready() {
+function Ready({ customItems, searchTerm }) {
   const [selectedItem, setSelectedItem] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-      const [items, setItems] = useState(readyMade1);
+  const [items, setItems] = useState(readyMade1);
   
-useEffect(()=>{
-      const fetchData=async()=>{    
-        const data=await UploadedReady()
-        setItems( [...items,...data])
-            }
-  fetchData()
-    },[])
+  useEffect(() => {
+    // If we have custom items from search, use those instead
+    if (customItems) {
+      setItems(customItems);
+    } else {
+      // Otherwise load default items and fetch additional ones
+      setItems(readyMade1);
+      const fetchData = async () => {    
+        const data = await UploadedReady();
+        setItems(prevItems => [...prevItems, ...data]);
+      };
+      fetchData();
+    }
+  }, [customItems]); // Re-run when customItems changes
   const openModal = (item) => {
     setSelectedItem(item);
     setIsModalOpen(true);

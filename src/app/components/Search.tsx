@@ -12,7 +12,7 @@ export default function Search() {
 
   // Function to handle WhatsApp redirection
   const handleWhatsAppSearch = () => {
-    const phoneNumber = "+254 710 434297"; // Replace with your WhatsApp number
+    const phoneNumber = "+254713593401"; // Updated WhatsApp number
     const message = encodeURIComponent(`Hi, I am searching for: ${searchTerm}`);
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
 
