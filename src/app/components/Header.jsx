@@ -45,7 +45,7 @@ function Header() {
             <CallIcon className="w-5 h-5" />
           </button>
           <button className="bg-teal-500 text-white font-medium rounded-r-full px-4 py-2 hover:bg-teal-600 transition-all">
-            <a href="tel:+254710434297" className="ml-1">
+            <a href="tel:+254713593401" className="ml-1">
               Call Us
             </a>
           </button>

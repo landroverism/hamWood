@@ -29,7 +29,7 @@ function Footer() {
 
       <div className="flex md:flex  gap-4 mt-2 flex-wrap ">
     <a
-      href="tel:+254710434297"
+      href="tel:+254713593401"
       className="flex items-center border-2 text-teal-600 border-teal-200 px-2 py-1 rounded-full hover:bg-gray-800"
     >
       <CallIcon fontSize="small" className="mr-2" />

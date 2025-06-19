@@ -15,7 +15,7 @@ function Section1Intro() {
         <h2 className="text-xl text-gray-600">Get Your Desired Furniture Design!</h2>
         <div className="lg:flex md:flex gap-4 flex-wrap hidden">
           <a
-            href="tel:+254710434297"
+            href="tel:+254713593401"
             className="flex items-center bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800"
           >
             <CallIcon fontSize="small" className="mr-2" />
